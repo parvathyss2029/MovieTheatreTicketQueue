@@ -4,50 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Theatre Ticket System</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CineQueue | Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🎬 CineQueue</h1>
-        <p>Movie Theatre Ticket and Waiting Queue System</p>
+    <header class="navbar">
+        <a class="logo" href="#">🎬 CineQueue</a>
+        <span class="tagline">YOUR MOVIE. YOUR MOMENT.</span>
     </header>
 
+    <section class="hero">
+        <p class="eyebrow">WELCOME TO CINEQUEUE</p>
+        <h1>Lights. Camera.<br><span>Your Seats.</span></h1>
+        <p>Book your favourite movie and let the show begin.</p>
+        <a href="#booking" class="hero-btn">Book Your Tickets ↓</a>
+    </section>
+
     <main>
-        <section class="card">
+        <section class="stats">
+            <div class="stat">
+                <span>🎟️</span>
+                <p>Available Seats</p>
+                <h2 id="available">5</h2>
+            </div>
+            <div class="stat">
+                <span>✅</span>
+                <p>Confirmed Bookings</p>
+                <h2 id="total">0</h2>
+            </div>
+            <div class="stat">
+                <span>⏳</span>
+                <p>Waiting Customers</p>
+                <h2 id="waitingCount">0</h2>
+            </div>
+        </section>
+
+        <section class="panel" id="booking">
+            <p class="eyebrow">RESERVE YOUR EXPERIENCE</p>
             <h2>Book Movie Tickets</h2>
 
-            <label for="customer">Customer Name</label>
-            <input id="customer" placeholder="Enter your name">
+            <label for="customer">Your Name</label>
+            <input id="customer" placeholder="Enter your full name">
 
-            <label for="movie">Select Movie</label>
+            <label for="movie">Choose Your Movie</label>
             <select id="movie">
-                <option value="The Last Galaxy">The Last Galaxy</option>
-                <option value="Letters to Yesterday">Letters to Yesterday</option>
-                <option value="The Hidden Signal">The Hidden Signal</option>
+                <option>The Last Galaxy</option>
+                <option>Letters to Yesterday</option>
+                <option>The Hidden Signal</option>
             </select>
 
             <label for="seats">Number of Seats</label>
-            <input id="seats" type="number" min="1" value="1">
+            <input id="seats" type="number" min="1" max="5" value="1">
 
-            <button id="bookBtn">Book Tickets</button>
-            <p id="message"></p>
+            <button id="bookBtn">🎟️ Confirm Booking</button>
+            <p id="message" role="status"></p>
         </section>
 
-        <section class="card">
+        <section class="panel">
+            <p class="eyebrow">YOUR RESERVATIONS</p>
             <h2>Booking Records</h2>
-            <p>Total bookings: <strong id="total">0</strong></p>
-            <div id="records">No bookings yet.</div>
+            <div id="records">No bookings yet. Your movie night starts here!</div>
         </section>
 
-        <section class="card">
-            <h2>Waiting Queue (FIFO)</h2>
-            <p>Customers waiting for available seats appear here.</p>
-            <div id="queue">Waiting queue is empty.</div>
+        <section class="panel">
+            <p class="eyebrow">FIRST IN, FIRST OUT</p>
+            <h2>⏳ Waiting Queue</h2>
+            <p class="muted">When seats are unavailable, customers wait in FIFO order.</p>
+            <div id="queue">The queue is empty.</div>
         </section>
     </main>
 
-    <footer>Data Structures Mini Project · Arrays and Queues</footer>
-    <script src="js/app.js"></script>
+    <footer>
+        <h3>🎬 CineQueue</h3>
+        <p>Movie Theatre Ticket and Waiting Queue System</p>
+        <p>Data Structures Mini Project · Arrays & Queues</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
