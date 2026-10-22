@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theatre Ticket System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 CineQueue</h1>
+        <p>Movie Theatre Ticket and Waiting Queue System</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Book Movie Tickets</h2>
+
+            <label for="customer">Customer Name</label>
+            <input id="customer" placeholder="Enter your name">
+
+            <label for="movie">Select Movie</label>
+            <select id="movie">
+                <option value="The Last Galaxy">The Last Galaxy</option>
+                <option value="Letters to Yesterday">Letters to Yesterday</option>
+                <option value="The Hidden Signal">The Hidden Signal</option>
+            </select>
+
+            <label for="seats">Number of Seats</label>
+            <input id="seats" type="number" min="1" value="1">
+
+            <button id="bookBtn">Book Tickets</button>
+            <p id="message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Booking Records</h2>
+            <p>Total bookings: <strong id="total">0</strong></p>
+            <div id="records">No bookings yet.</div>
+        </section>
+
+        <section class="card">
+            <h2>Waiting Queue (FIFO)</h2>
+            <p>Customers waiting for available seats appear here.</p>
+            <div id="queue">Waiting queue is empty.</div>
+        </section>
+    </main>
+
+    <footer>Data Structures Mini Project · Arrays and Queues</footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
